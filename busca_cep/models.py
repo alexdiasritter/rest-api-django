@@ -7,8 +7,8 @@ class Endereco(models.Model):
     bairro = models.CharField(max_length=255)
     localidade = models.CharField(max_length=255) # cidade
     uf = models.CharField(max_length=2) # estado
-    # Podemos adicionar um campo de timestamp para controle de cache
     data_atualizacao = models.DateTimeField(auto_now=True)
+    dados_historicos = models.CharField(max_length=1000, blank=True, null=True)
 
     def __str__(self):
         return f"{self.cep} - {self.logradouro}, {self.localidade}/{self.uf}"
